@@ -1,17 +1,17 @@
 import { totalQuantity as totalQuantityRaw } from "./totalQuantity.js";
 
-const runningRequests = new Map();
+const requestsQueue = new Map();
 
 export function totalQuantity(product) {
-  if (runningRequests.has(product)) {
+  if (requestsQueue.has(product)) {
     console.log("Batching...")
-    return runningRequests.get(product);
+    return requestsQueue.get(product);
   }
 
   const promise = totalQuantityRaw(product);
-  runningRequests.set(product, promise);
+  requestsQueue.set(product, promise);
   promise.finally(() => {
-    runningRequests.delete(product)
+    requestsQueue.delete(product)
   })
   return promise;
 }

@@ -9,9 +9,7 @@ export async function totalQuantity(product) {
 
   return new Promise(function (resolve, reject) {
     db.all(sql, [product], (err, rows) => {
-      if (err)
-        return reject();
-
+      if (err) return reject();
       rows.forEach((row) => {
         total += row.quantity;
       })

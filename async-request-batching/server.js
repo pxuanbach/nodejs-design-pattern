@@ -16,8 +16,8 @@ app.get('/total-quantity', async (req, res) => {
     product,
     total
   })
-})
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on PORT ${PORT}`)
-})
+});

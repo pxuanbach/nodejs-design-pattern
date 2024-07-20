@@ -3,8 +3,8 @@ import superagent from 'superagent'
 const start = Date.now()
 let count = 20
 let pending = count
-const interval = 10
-const query = process.argv[2] ? process.argv[2] : 'product=nodejs'
+const interval = 20
+const query = process.argv[2] ? process.argv[2] : 'product=design'
 
 function sendRequest () {
   superagent.get(`http://localhost:8000/total-quantity?${query}`)
