@@ -1,0 +1,24 @@
+{
+  "name": "async-request-batching",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "populate": "node populateDb.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "sqlite3": "^5.1.7",
+    "superagent": "^9.0.2"
+  },
+  "engines": {
+    "node": "v18.19.0"
+  }
+}
